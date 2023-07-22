@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Link to the Bootstrap CSS library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <!-- Custom styles for the "Go Back" button -->
+    <style>
+        /* Style for the "Go Back" button */
+        .go-back-btn {
+            background-color: rgba(71, 71, 244, 0.642); /* Set the background color to blue with transparency */
+            color: white; /* Set text color to white */
+            border-color: rgba(71, 71, 244, 0.642); /* Set border color to blue with transparency */
+        }
+
+        /* Hover effect for the "Go Back" button */
+        .go-back-btn:hover {
+            background-color: blue; /* Change background color to solid blue on hover */
+            color: white; /* Set text color to white on hover */
+        }
+    </style>
+</head>
+<body class="m-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+              
+               <!-- "Go Back" button to return to the gallery page -->
+               <a href="{% url 'gallery' %}" class="btn btn-primary my-3 go-back-btn">Go Back</a> 
+              
+               <div style="height: 90vh;">
+                  <!-- Display the photo in full size with a maximum height and width of 100% -->
+                  <img style="max-width: 100%; max-height: 100%;" src="{{ photo.image.url }}">
+                  
+                  <!-- Display the description of the photo -->
+                  <p>{{ photo.description }}</p>
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
